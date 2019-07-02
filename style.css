@@ -1,0 +1,49 @@
+/* div {
+  border: 1px solid black;
+} */
+body{
+  width: 100vw;
+  height: 100vh;
+  background-color: lightcyan;
+}
+header{
+  width: 100%;
+  height:12.5%;
+  text-align: center;
+}
+.blackborder{
+  border: 1px solid black;
+}
+
+aside{
+  width: 20%;
+  height: 80%;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+  display: inline-block;
+}
+
+aside > div{
+  height: 12%;
+  margin: 5px 20px;
+  position: relative;
+}
+main{
+  width: 79%;
+  height: 77.65%;
+  display:inline-block;
+  padding-top: 1.65%;
+}
+.lfzcard{
+  background-color: black;
+}
+.card{
+  height: 10%;
+  width:50px;
+}
+.container{
+  width: 80%;
+  display: inline-block;
+  align-content: center;
+}
