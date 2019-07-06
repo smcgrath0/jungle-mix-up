@@ -12,5 +12,4 @@ function handleCardClick(event){
   }else{
     $(event.target).addClass("lfzcard");
   }
-
 }
