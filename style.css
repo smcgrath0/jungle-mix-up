@@ -33,6 +33,7 @@ aside > div{
   margin: 5px 20px;
   position: relative;
   margin-top: 4px;
+
 }
 .stat{
 
@@ -84,7 +85,7 @@ main{
   background-size: cover;
   position: relative;
   display:inline-block;
-  z-index: 5;
+  z-index: 10;
 }
 .card{
   height: 50px;
