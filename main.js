@@ -8,9 +8,34 @@ var matches = null;
 var attempts = 0;
 var games_played = 0;
 var accuracy = 0;
+var animalsArray = ["tiger", "elephant", "panda", "parrot", "monkey", "kangaroo", "panther", "frog","tiger", "elephant", "panda", "parrot", "monkey", "kangaroo", "panther", "frog"];
+
 function initializeApp(){
   $(".card > div").addClass("lfzcard");
+
+  shuffle(animalsArray);
+
+  for( var i = 0; i < animalsArray.length; i++){
+    $(".container > .card:nth-child(" + (i+1) + ") > div").addClass(animalsArray[i])
+  }
+
   $(".card").on("click", handleCardClick);
+  $("#playAgain").on("click", resetGameBoard);
+}
+
+function shuffle(array) {
+  var currentIndex = array.length;
+  var tempValue, randomIndex;
+
+  while (1 <= currentIndex) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    --currentIndex;
+    tempValue = array[currentIndex];
+    console.log(tempValue, currentIndex, randomIndex, array[currentIndex])
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = tempValue;
+  }
+  return array;
 }
 
 function handleCardClick(event, eventTarget){
@@ -39,6 +64,7 @@ function handleCardClick(event, eventTarget){
   displayStats();
   resetStats();
 }
+
 
 function match(card1, card2){
   if (firstCardClicked.css("background-image") === secondCardClicked.css("background-image")) {
@@ -70,14 +96,21 @@ function resetStats(){
     matches = attempts = 0;
     displayStats();
     $(".endGameScreen").css("display", "block");
-    $("#playAgain").on("click", resetGameBoard);
   }
 }
 
 function resetGameBoard(){
   $(".endGameScreen").css("display", "none");
-  $(".card > div").addClass("lfzcard");
+  $(".card > div").removeClass();
+  $(".card > div").addClass("lfzcard back");
+
+  shuffle(animalsArray);
+  for (var i = 0; i < animalsArray.length; i++) {
+    $(".container > .card:nth-child(" + (i + 1) + ") > div").addClass(animalsArray[i])
+  }
+
   $(".card").on("click", handleCardClick);
+
 }
 
 function displayStats(){
