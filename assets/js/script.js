@@ -1,6 +1,4 @@
-
 $(document).ready(initializeApp);
-
 
 var firstCardClicked = null;
 var secondCardClicked = null;
@@ -12,7 +10,7 @@ var accuracy = 0;
 var animalsArray = ["tiger", "elephant", "panda", "parrot", "monkey", "kangaroo", "panther", "frog", "tiger", "elephant", "panda", "parrot", "monkey", "kangaroo", "panther", "frog"];
 
 function initializeApp() {
-  $(".card > div").addClass("lfzcard");
+  $(".card > div").addClass("jungleCard");
 
   shuffle(animalsArray);
 
@@ -44,10 +42,10 @@ function handleCardClick(event, eventTarget) {
   eventTarget = $(event.target);
   numberOfCards = numberOfCards + 1;
 
-  if (eventTarget.hasClass("lfzcard")) {
-    eventTarget.removeClass("lfzcard");
+  if (eventTarget.hasClass("jungleCard")) {
+    eventTarget.removeClass("jungleCard");
   } else {
-    eventTarget.addClass("lfzcard");
+    eventTarget.addClass("jungleCard");
   }
   if (firstCardClicked === null) {
     firstCardClicked = eventTarget;
@@ -66,7 +64,6 @@ function handleCardClick(event, eventTarget) {
   resetStats();
 }
 
-
 function match(card1, card2) {
   if (firstCardClicked.css("background-image") === secondCardClicked.css("background-image")) {
     // console.log("cards match");
@@ -80,8 +77,8 @@ function match(card1, card2) {
 }
 
 function canClick(card1, card2) {
-  $(card1).addClass("lfzcard");
-  $(card2).addClass("lfzcard");
+  $(card1).addClass("jungleCard");
+  $(card2).addClass("jungleCard");
   card1.on("click", handleCardClick);
   card2.on("click", handleCardClick);
   $("main").css("pointer-events", "auto");
@@ -103,7 +100,7 @@ function resetStats() {
 function resetGameBoard() {
   $(".endGameScreen").css("display", "none");
   $(".card > div").removeClass();
-  $(".card > div").addClass("lfzcard back");
+  $(".card > div").addClass("jungleCard back");
 
   shuffle(animalsArray);
   for (var i = 0; i < animalsArray.length; i++) {
