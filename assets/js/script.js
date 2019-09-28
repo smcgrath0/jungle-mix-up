@@ -64,7 +64,7 @@ function handleCardClick(event, eventTarget) {
 }
 
 function match(card1, card2) {
-  
+
   if (card1.hasClass(card2.attr('class'))) {
     ++matches;
   } else {
@@ -80,9 +80,13 @@ function canClick(card1, card2) {
   $(card2).css("transform","scale(1)");
   $(card1).hover(()=> {
     $(card1).css({"transform":"scale(1.05)", "transition-duration":"1s"})
+  }, ()=> {
+    $(card1).css({"transform":"scale(1)", "transition-duration":"1s"})
   })
   $(card2).hover(()=> {
     $(card2).css({"transform":"scale(1.05)", "transition-duration":"1s"})
+  }, ()=> {
+    $(card2).css({"transform":"scale(1)", "transition-duration":"1s"})
   })
   $(card1).addClass("jungleCard");
   $(card2).addClass("jungleCard");
