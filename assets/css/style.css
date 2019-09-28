@@ -105,14 +105,22 @@ main{
   background-size: cover;
   position: relative;
   z-index: 10;
+  cursor: pointer;
+  transform: scale(1);
+  transition-duration: 1s;
 }
-
 
 .card{
   height: 28.5%;
   width: 15.3%;
   display:inline-block;
   margin: 0.5%;
+}
+
+.jungleCard:hover{
+  transition-timing-function: ease;
+  transition-duration: 1s;
+  transform: scale(1.05);
 }
 
 @media screen and (max-width: 768px) {

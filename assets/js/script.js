@@ -30,7 +30,7 @@ function shuffle(array) {
     randomIndex = Math.floor(Math.random() * currentIndex);
     --currentIndex;
     tempValue = array[currentIndex];
-    console.log(tempValue, currentIndex, randomIndex, array[currentIndex])
+    // console.log(tempValue, currentIndex, randomIndex, array[currentIndex])
     array[currentIndex] = array[randomIndex];
     array[randomIndex] = tempValue;
   }
@@ -38,12 +38,12 @@ function shuffle(array) {
 }
 
 function handleCardClick(event, eventTarget) {
-  console.log(event);
+  // console.log(event);
   eventTarget = $(event.target);
   numberOfCards = numberOfCards + 1;
-
   if (eventTarget.hasClass("jungleCard")) {
     eventTarget.removeClass("jungleCard");
+    eventTarget.css("transform","scale(1.05)");
   } else {
     eventTarget.addClass("jungleCard");
   }
@@ -53,7 +53,6 @@ function handleCardClick(event, eventTarget) {
   } else if (secondCardClicked === null && firstCardClicked != eventTarget) {
     secondCardClicked = eventTarget;
     $(this).off("click");
-
   }
   if (secondCardClicked != null && firstCardClicked != null) {
     match(firstCardClicked, secondCardClicked);
@@ -65,8 +64,8 @@ function handleCardClick(event, eventTarget) {
 }
 
 function match(card1, card2) {
-  if (firstCardClicked.css("background-image") === secondCardClicked.css("background-image")) {
-    // console.log("cards match");
+  
+  if (card1.hasClass(card2.attr('class'))) {
     ++matches;
   } else {
     var time2 = setTimeout(canClick, 1000, card1, card2);
@@ -77,6 +76,14 @@ function match(card1, card2) {
 }
 
 function canClick(card1, card2) {
+  $(card1).css("transform","scale(1)");
+  $(card2).css("transform","scale(1)");
+  $(card1).hover(()=> {
+    $(card1).css({"transform":"scale(1.05)", "transition-duration":"1s"})
+  })
+  $(card2).hover(()=> {
+    $(card2).css({"transform":"scale(1.05)", "transition-duration":"1s"})
+  })
   $(card1).addClass("jungleCard");
   $(card2).addClass("jungleCard");
   card1.on("click", handleCardClick);
