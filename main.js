@@ -68,7 +68,7 @@ function handleCardClick(event, eventTarget){
 
 function match(card1, card2){
   if (firstCardClicked.css("background-image") === secondCardClicked.css("background-image")) {
-    console.log("cards match");
+    // console.log("cards match");
     ++matches;
   }else {
     var time2 = setTimeout(canClick, 1000, card1, card2);

@@ -16,7 +16,7 @@ header{
   background-color: rgba(144, 233, 192, 0.7)
 }
 
-.blackborder{
+.burlyBorder{
   border: 1px solid burlywood;
 }
 
@@ -57,6 +57,7 @@ main{
   background-position: center;
   background-size:cover;
   background-repeat: no-repeat;
+  border-radius: 5px;
   height:100%;
   width: 100%;
   position: relative;
@@ -127,6 +128,7 @@ main{
   width: 20%;
   text-align:center;
   padding-top: 5%;
+  border-radius: 5px;
 }
 
 #playAgain{
