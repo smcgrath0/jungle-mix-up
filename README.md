@@ -2,6 +2,4 @@
 
 Matching card game made with Javascript, jQuery, HTML, and CSS.
 
-I started this project while attending LearningFuze.
-
 ![GIF of Live](/assets/images/portfoliovidJungle.gif)
