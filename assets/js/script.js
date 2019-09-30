@@ -11,7 +11,10 @@ var animalsArray = ["tiger", "elephant", "panda", "parrot", "monkey", "kangaroo"
 
 function initializeApp() {
   $(".card > div").addClass("jungleCard");
-
+  $(".startGameScreen").css("display", "block");
+  $("#playButton").on("click", () => {
+    $(".startGameScreen").css("display", "none");
+  })
   shuffle(animalsArray);
 
   for (var i = 0; i < animalsArray.length; i++) {
@@ -30,7 +33,6 @@ function shuffle(array) {
     randomIndex = Math.floor(Math.random() * currentIndex);
     --currentIndex;
     tempValue = array[currentIndex];
-    // console.log(tempValue, currentIndex, randomIndex, array[currentIndex])
     array[currentIndex] = array[randomIndex];
     array[randomIndex] = tempValue;
   }
@@ -38,7 +40,6 @@ function shuffle(array) {
 }
 
 function handleCardClick(event, eventTarget) {
-  // console.log(event);
   eventTarget = $(event.target);
   numberOfCards = numberOfCards + 1;
   if (eventTarget.hasClass("jungleCard")) {
@@ -100,11 +101,11 @@ function calculateAccuracy() {
 }
 
 function resetStats() {
-  if (matches == 8) {
+  if (matches == 1) {
     ++games_played;
-    matches = attempts = 0;
     displayStats();
-    $(".endGameScreen").css("display", "block");
+    matches = attempts = 0;
+    $(".endGameScreen").css("display", "flex");
   }
 }
 
