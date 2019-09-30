@@ -1,1 +1,233 @@
+body{
+  background-image: url("../images/mainbg.jpg");
+  background-size: cover;
+  height:120vh;
+  position: relative;
+  margin: 0%;
+  color: orangered;
+  font-family: fantasy;
+}
 
+header{
+  width: 90%;
+  height:12.5%;
+  margin-top: 2.5%;
+  margin-left:5%;
+  text-align: center;
+  background-color: rgba(144, 233, 192, 0.7)
+}
+
+.burlyBorder{
+  border: 1px solid burlywood;
+}
+
+.game{
+  display:flex;
+  width: 95vw;
+  height: 65vh;
+  margin:auto;
+}
+
+aside{
+  width: 80%;
+  height: 100%;
+  text-align: center;
+  display: inline-block;
+  background-color: rgba(144, 233, 192, 0.7);
+}
+
+aside > div{
+  height:10%;
+  position: relative;
+}
+
+main{
+  width: 100%;
+  height:100%;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  margin: 10px 0px 0px 10px;
+  background-color: rgba(144, 233, 192, 0.7)
+}
+
+.back{
+  background-position: center;
+  background-size:cover;
+  background-repeat: no-repeat;
+  border-radius: 5px;
+  height:100%;
+  width: 100%;
+  position: relative;
+}
+
+.tiger{
+  background-image: url("../images/tigerbg.jpg");
+  background-size: cover;
+}
+.elephant{
+  background-image: url("../images/elephantbg.jpg");
+  background-size: cover;
+}
+.monkey{
+  background-image: url("../images/monkeybg.jpg");
+  background-size: cover;
+}
+.frog{
+  background-image: url("../images/frogbg.jpg");
+  background-size: cover;
+}
+.parrot{
+  background-image: url("../images/parrotbg.jpg");
+  background-size: cover;
+}
+.panda{
+  background-image: url("../images/pandabg.jpg");
+  background-size: cover;
+}
+.panther{
+  background-image: url("../images/pantherbg.jpg");
+  background-size: cover;
+}
+.kangaroo{
+  background-image: url("../images/kangaroobg.webp");
+  background-size: cover;
+}
+
+.jungleCard{
+  width:100%;
+  height: 100%;
+  background-image: url("../images/cardbackbg.jpg");
+  background-size: cover;
+  position: relative;
+  z-index: 10;
+  cursor: pointer;
+  transform: scale(1);
+  transition-duration: 1s;
+}
+
+.card{
+  height: 28.5%;
+  width: 15.3%;
+  display:inline-block;
+  margin: 0.5%;
+}
+
+.jungleCard:hover{
+  transition-timing-function: ease;
+  transition-duration: 1s;
+  transform: scale(1.05);
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    height: 22%;
+    width: 23.5%;
+  }
+  main{
+    margin-right:2%;
+  }
+}
+
+.container{
+  display: inline-block;
+  align-content: center;
+  width:100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 460px) {
+  main {
+    height: 150%;
+    width: 80%;
+    margin-left:10%;
+  }
+  .card {
+    height: 15.25%;
+    width: 31.5%;
+  }
+  .panther{
+    background-position: right;
+  }
+  .kangaroo{
+    background-position:center right;
+  }
+  .card:last-child {
+    margin-left:33.3%;
+  }
+}
+
+.endGameScreen{
+  height: 108%;
+  width: 98.7%;
+  position: absolute;
+  top:-10%;
+  padding: 10px 0px 0px 10px;
+  z-index: 50;
+  background-color: rgba(100,100,100,0.4);
+  display:none;
+}
+
+.startGameScreen{
+  height: 108%;
+  width: 98.7%;
+  color:brown;
+  position: absolute;
+  top:-10%;
+  padding: 10px 0px 0px 10px;
+  z-index: 50;
+  background-color: rgba(100,100,100,0.7);
+  display:none;
+}
+
+.startPopUp{
+  background-color: rgba(255, 166, 65, 1);
+  top: 30%;
+  left: 33.33%;
+  position: fixed;
+  padding-bottom: 2%;
+  width: 33.33%;
+  text-align:center;
+  border-radius: 5px;
+}
+
+#playButton{
+  background-color: burlywood;
+  border-radius: 10%;
+  border:0px;
+  transition-duration: 1s;
+  transition-timing-function: ease;
+  transform: scale(1);
+  margin-bottom: 2%;
+}
+
+#playButton:hover{
+  background-color: brown;
+  transition-duration: 1s;
+  transition-timing-function: ease;
+  transform: scale(1.05);
+}
+
+.popUp{
+  background-color: rgba(255, 166, 65, 1);
+  top: 30%;
+  left: 33.33%;
+  position: fixed;
+  width: 33.33%;
+  text-align:center;
+  border-radius: 5px;
+  display:inline-block;
+}
+
+#playAgain{
+  text-align: center;
+  left: 47%;
+  border: 0;
+  background-color: rgba(247, 83, 83, 0.4);
+  margin-bottom: 2%;
+  margin:5%;
+}
+
+#playAgain:hover{
+  background-color: brown;
+}
