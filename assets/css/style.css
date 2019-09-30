@@ -193,6 +193,7 @@ main{
 
 #playButton{
   background-color: burlywood;
+  border-radius: 10%;
   border:0px;
   transition-duration: 1s;
   transition-timing-function: ease;
