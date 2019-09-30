@@ -101,7 +101,7 @@ function calculateAccuracy() {
 }
 
 function resetStats() {
-  if (matches == 1) {
+  if (matches == 8) {
     ++games_played;
     displayStats();
     matches = attempts = 0;
