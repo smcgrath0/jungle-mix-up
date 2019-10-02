@@ -22,7 +22,7 @@ function initializeApp() {
   }
 
   $(".card").on("click", handleCardClick);
-  $("#playAgain").on("click", resetGameBoard);
+  $(".playAgain").on("click", resetGameBoard);
 }
 
 function shuffle(array) {
@@ -61,7 +61,11 @@ function handleCardClick(event, eventTarget) {
 
   calculateAccuracy();
   displayStats();
-  resetStats();
+
+  if (matches == 8) {
+    resetStats();
+    $(".endGameScreen").css("display", "flex");
+  }
 }
 
 function match(card1, card2) {
@@ -101,15 +105,14 @@ function calculateAccuracy() {
 }
 
 function resetStats() {
-  if (matches == 8) {
-    ++games_played;
-    displayStats();
-    matches = attempts = 0;
-    $(".endGameScreen").css("display", "flex");
-  }
+  ++games_played;
+  displayStats();
+  matches = attempts = 0;
 }
 
 function resetGameBoard() {
+  console.log(animalsArray);
+  resetStats();
   $(".endGameScreen").css("display", "none");
   $(".card > div").removeClass();
   $(".card > div").addClass("jungleCard back");

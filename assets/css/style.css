@@ -24,7 +24,7 @@ header{
 .game{
   display:flex;
   width: 95vw;
-  height: 65vh;
+  height: 75vh;
   margin:auto;
 }
 
@@ -43,7 +43,7 @@ aside > div{
 
 main{
   width: 100%;
-  height:100%;
+  height:120%;
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
@@ -68,6 +68,7 @@ main{
 .elephant{
   background-image: url("../images/elephantbg.jpg");
   background-size: cover;
+  background-position: top;
 }
 .monkey{
   background-image: url("../images/monkeybg.jpg");
@@ -76,10 +77,12 @@ main{
 .frog{
   background-image: url("../images/frogbg.jpg");
   background-size: cover;
+  background-position: top;
 }
 .parrot{
   background-image: url("../images/parrotbg.jpg");
   background-size: cover;
+  background-position: top;
 }
 .panda{
   background-image: url("../images/pandabg.jpg");
@@ -90,8 +93,9 @@ main{
   background-size: cover;
 }
 .kangaroo{
-  background-image: url("../images/kangaroobg.webp");
+  background-image: url("../images/kangaroobg.png");
   background-size: cover;
+  background-position: top;
 }
 
 .jungleCard{
@@ -107,8 +111,8 @@ main{
 }
 
 .card{
-  height: 28.5%;
-  width: 15.3%;
+  height: 20.5%;
+  width: 22.5%;
   display:inline-block;
   margin: 0.5%;
 }
@@ -130,10 +134,24 @@ main{
 }
 
 .container{
-  display: inline-block;
-  align-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   width:100%;
   height: 100%;
+  padding-top: 1%;
+}
+
+.startGameScreen{
+  height: 108.5%;
+  width: 98.5%;
+  color:brown;
+  position: absolute;
+  top:-10%;
+  padding: 10px 0px 0px 10px;
+  z-index: 50;
+  background-color: rgba(100,100,100,0.7);
+  display:none;
 }
 
 @media screen and (max-width: 460px) {
@@ -144,7 +162,7 @@ main{
   }
   .card {
     height: 15.25%;
-    width: 31.5%;
+    width: 30.5%;
   }
   .panther{
     background-position: right;
@@ -152,8 +170,8 @@ main{
   .kangaroo{
     background-position:center right;
   }
-  .card:last-child {
-    margin-left:33.3%;
+  .startGameScreen{
+    height: 130%;
   }
 }
 
@@ -168,17 +186,7 @@ main{
   display:none;
 }
 
-.startGameScreen{
-  height: 108%;
-  width: 98.7%;
-  color:brown;
-  position: absolute;
-  top:-10%;
-  padding: 10px 0px 0px 10px;
-  z-index: 50;
-  background-color: rgba(100,100,100,0.7);
-  display:none;
-}
+
 
 .startPopUp{
   background-color: rgba(255, 166, 65, 1);
@@ -217,6 +225,29 @@ main{
   text-align:center;
   border-radius: 5px;
   display:inline-block;
+}
+
+.restart{
+  width: 50%;
+  border: 0;
+  background-color: rgba(247, 83, 83, 0.4);
+  margin:auto;
+  cursor: pointer;
+  transition-duration: 1s;
+  transition-timing-function: ease;
+  transform: scale(1);
+}
+
+.restart:hover{
+  background-color: brown;
+  transition-duration: 1s;
+  transition-timing-function: ease;
+  transform: scale(1.05);
+}
+.restartContainer{
+  display:flex;
+  justify-content:center;
+  margin-top: 2%;
 }
 
 #playAgain{
