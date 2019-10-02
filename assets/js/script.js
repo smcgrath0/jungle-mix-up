@@ -61,7 +61,7 @@ function handleCardClick(event, eventTarget) {
 
   calculateAccuracy();
   displayStats();
-  
+
   if (matches == 8) {
     resetStats();
     $(".endGameScreen").css("display", "flex");
