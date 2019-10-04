@@ -21,7 +21,7 @@ function initializeApp() {
     $(".container > .card:nth-child(" + (i + 1) + ") > div").addClass(animalsArray[i])
   }
 
-  $(".card").on("click", handleCardClick);
+  $(".card > div").on("click", handleCardClick);
   $(".playAgain").on("click", resetGameBoard);
 }
 
@@ -40,7 +40,6 @@ function shuffle(array) {
 }
 
 function handleCardClick(event, eventTarget) {
-  console.log(event);
   eventTarget = $(event.target);
   numberOfCards = numberOfCards + 1;
   if (eventTarget.hasClass("jungleCard")) {
@@ -112,19 +111,18 @@ function resetStats() {
 }
 
 function resetGameBoard() {
-  console.log(animalsArray);
   resetStats();
   $(".endGameScreen").css("display", "none");
-  $(".card > div").removeClass();
-  $(".card > div").addClass("jungleCard back");
-
   animalsArray = shuffle(animalsArray);
   for (var i = 0; i < animalsArray.length; i++) {
-    if ($(".card:nth-child(" + (i + 1) + ")").attr("onClick") != undefined) {
-      $(".card:nth-child(" + (i + 1) + ")").on("click", handleCardClick);
+    if (!$(".card:nth-child(" + (i + 1) + ") > div").hasClass("jungleCard")) {
+      $(".card:nth-child(" + (i + 1) + ") > div").on("click", handleCardClick);
     }
+    $(".card:nth-child(" + (i + 1) + ") > div").removeClass();
+    $(".card:nth-child(" + (i + 1) + ") > div").addClass("jungleCard back");
     $(".container > .card:nth-child(" + (i + 1) + ") > div").addClass(animalsArray[i])
   }
+
 }
 
 function displayStats() {
