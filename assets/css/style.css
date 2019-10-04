@@ -136,6 +136,9 @@ main{
   .parrot{
     background-position: left;
   }
+  .panther{
+    background-position: right;
+  }
   main{
     margin-right:2%;
   }
