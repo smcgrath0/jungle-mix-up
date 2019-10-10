@@ -14,6 +14,9 @@ header{
   margin-top: 2.5%;
   margin-left:5%;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: rgba(144, 233, 192, 0.7)
 }
 
