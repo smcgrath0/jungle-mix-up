@@ -34,6 +34,9 @@ aside{
   text-align: center;
   display: inline-block;
   background-color: rgba(144, 233, 192, 0.7);
+  padding-bottom: 2%;
+  border-radius: 5%;
+  margin: 10px;
 }
 
 aside > div{
@@ -48,9 +51,29 @@ main{
   flex-wrap:wrap;
   justify-content:center;
   margin: 10px 0px 0px 10px;
-  background-color: rgba(144, 233, 192, 0.7)
+  background-color: rgba(144, 233, 192, 0.7);
+  padding-bottom: 1%;
 }
 
+.startPopUp{
+  background-color: rgba(255, 166, 65, 1);
+  top: 30%;
+  left: 29%;
+  position: fixed;
+  padding-bottom: 2%;
+  width: 33.33%;
+  text-align:center;
+  border-radius: 5px;
+  padding:5%;
+}
+
+.endGameCatagories{
+  font-weight: bold;
+}
+.endGameContentContainer{
+  display:flex;
+  align-items: center;
+}
 .back{
   background-position: center;
   background-size:cover;
@@ -125,6 +148,16 @@ main{
   transform: scale(1.05);
 }
 
+#playAgain{
+  text-align: center;
+  border: 0;
+  background-color: rgba(247, 83, 83, 0.4);
+  margin:5%;
+  border-radius:5%;
+  height: 40%;
+  width: 100%;
+}
+
 @media screen and (max-width: 768px) {
   .card {
     height: 22%;
@@ -141,6 +174,15 @@ main{
   }
   main{
     margin-right:2%;
+  }
+  .endGameContentContainer{
+    display: block;
+  }
+  #playAgain{
+    width: 50%;
+  }
+  .startPopUp{
+    left: 28.2%;
   }
 }
 
@@ -197,19 +239,6 @@ main{
   display:none;
 }
 
-
-
-.startPopUp{
-  background-color: rgba(255, 166, 65, 1);
-  top: 30%;
-  left: 33.33%;
-  position: fixed;
-  padding-bottom: 2%;
-  width: 33.33%;
-  text-align:center;
-  border-radius: 5px;
-}
-
 #playButton{
   background-color: burlywood;
   border-radius: 10%;
@@ -218,6 +247,7 @@ main{
   transition-timing-function: ease;
   transform: scale(1);
   margin-bottom: 2%;
+  padding:2%;
 }
 
 #playButton:hover{
@@ -241,16 +271,17 @@ main{
 .restart{
   width: 50%;
   border: 0;
-  background-color: rgba(247, 83, 83, 0.4);
+  background-color: brown;
   margin:auto;
   cursor: pointer;
   transition-duration: 1s;
   transition-timing-function: ease;
   transform: scale(1);
+  border-radius: 5%;
 }
 
 .restart:hover{
-  background-color: brown;
+  background-color: rgba(247, 83, 83, 0.4);
   transition-duration: 1s;
   transition-timing-function: ease;
   transform: scale(1.05);
@@ -260,14 +291,8 @@ main{
   justify-content:center;
   margin-top: 2%;
 }
-
-#playAgain{
-  text-align: center;
-  left: 47%;
-  border: 0;
-  background-color: rgba(247, 83, 83, 0.4);
-  margin-bottom: 2%;
-  margin:5%;
+.goodjob{
+  width:100%;
 }
 
 #playAgain:hover{
