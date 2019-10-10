@@ -211,6 +211,9 @@ main{
 }
 
 @media screen and (max-width: 460px) {
+  body{
+    height:140vh;
+  }
   main {
     height: 150%;
     width: 80%;
@@ -227,7 +230,7 @@ main{
     background-position:center right;
   }
   .startGameScreen{
-    height: 130%;
+    height:109%
   }
 }
 
